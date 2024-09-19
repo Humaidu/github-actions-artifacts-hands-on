@@ -20,6 +20,7 @@ jobs:
         path: hello.txt
 
   download:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -29,4 +30,4 @@ jobs:
         path: ./artifacts
 
     - name: Read file content
-      run: ls ./artifacts
+      run: cat ./artifacts/hello.txt
